@@ -55,7 +55,5 @@ public class MainActivity extends AppCompatActivity {
         prefs = getSharedPreferences("preferences", MODE_PRIVATE);
         String name = prefs.getString("name", "No name found.");
         viewName.setText(name); //sätt det sparade namnet i en textview
-
-        //SharedPreferences.Editor edit = prefs.edit();
     }
 }
