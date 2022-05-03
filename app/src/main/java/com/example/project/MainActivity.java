@@ -10,6 +10,7 @@ import androidx.appcompat.widget.Toolbar;
 public class MainActivity extends AppCompatActivity {
 
     TextView viewName;
+    SharedPreferences prefs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,15 +20,21 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         viewName = findViewById(R.id.nameText);
+
+        prefs = getSharedPreferences("preferences", MODE_PRIVATE);
+        SharedPreferences.Editor edit = prefs.edit();
+        edit.putString("name", "Rebecka"); //lägger in namn (finns alltid kvar även om raden tas bort) tills vi tar bort det
+        edit.apply(); //apply changes
     }
 
     @Override
     protected void onResume() {
         super.onResume();
 
-        SharedPreferences prefs = getSharedPreferences("preferences", MODE_PRIVATE);
+        //uppdaterar namnet varje resume
+        prefs = getSharedPreferences("preferences", MODE_PRIVATE);
         String name = prefs.getString("name", "No name found.");
-        viewName.setText(name);
+        viewName.setText(name); //sätt det sparade namnet i en textview
 
         //SharedPreferences.Editor edit = prefs.edit();
     }
