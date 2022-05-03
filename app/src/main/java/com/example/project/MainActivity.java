@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        //viewName = findViewById(R.id.nameText);
+        viewName = findViewById(R.id.print_view);
 
         prefs = getSharedPreferences("preferences", MODE_PRIVATE);
         edit = prefs.edit();
