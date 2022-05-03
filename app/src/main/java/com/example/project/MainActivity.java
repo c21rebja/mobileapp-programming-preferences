@@ -27,10 +27,11 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        viewName = findViewById(R.id.nameText);
+        //viewName = findViewById(R.id.nameText);
 
         prefs = getSharedPreferences("preferences", MODE_PRIVATE);
         edit = prefs.edit();
+
         //edit.putString("name", "Rebecka"); //lägger in namn (finns alltid kvar även om raden tas bort) tills vi tar bort det
         //edit.apply(); //apply changes
 
