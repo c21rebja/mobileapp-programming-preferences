@@ -16,12 +16,7 @@ public class MainActivity extends AppCompatActivity {
 
     TextView viewName;
 
-    //EditText nameInput;
-
     SharedPreferences prefs;
-    SharedPreferences.Editor edit;
-
-    //private Button saveButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
