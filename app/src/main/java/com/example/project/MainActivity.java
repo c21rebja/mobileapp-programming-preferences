@@ -1,5 +1,6 @@
 package com.example.project;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
@@ -13,13 +14,15 @@ import androidx.appcompat.widget.Toolbar;
 
 public class MainActivity extends AppCompatActivity {
 
-    TextView viewName;
-    EditText nameInput;
+    //TextView viewName;
+    //EditText nameInput;
 
     SharedPreferences prefs;
     SharedPreferences.Editor edit;
 
-    private Button saveButton;
+    //private Button saveButton;
+
+    private Button startActivity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +31,17 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        startActivity = findViewById(R.id.second_activity_button);
+
+        startActivity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        /*
         viewName = findViewById(R.id.print_view);
 
         prefs = getSharedPreferences("preferences", MODE_PRIVATE);
@@ -46,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
                 edit.apply();
             }
         });
+         */
     }
 
     @Override
