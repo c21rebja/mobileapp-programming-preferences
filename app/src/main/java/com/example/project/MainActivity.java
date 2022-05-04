@@ -14,15 +14,14 @@ import androidx.appcompat.widget.Toolbar;
 
 public class MainActivity extends AppCompatActivity {
 
-    //TextView viewName;
+    TextView viewName;
+
     //EditText nameInput;
 
     SharedPreferences prefs;
     SharedPreferences.Editor edit;
 
     //private Button saveButton;
-
-    private Button startActivity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,8 +30,7 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        startActivity = findViewById(R.id.second_activity_button);
-
+        Button startActivity = findViewById(R.id.second_activity_button);
         startActivity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -40,6 +38,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        viewName = findViewById(R.id.print_view);
 
         /*
         viewName = findViewById(R.id.print_view);
@@ -68,11 +68,12 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
 
         // read data from shared preferences and update text
-
-        /*
-        //uppdaterar namnet varje resume
         prefs = getSharedPreferences("preferences", MODE_PRIVATE);
         String name = prefs.getString("name", "No name found.");
+
+        viewName.setText(name);
+
+        /*
         if(viewName != null) {
             viewName.setText(name); //sätt det sparade namnet i en textview
         }
