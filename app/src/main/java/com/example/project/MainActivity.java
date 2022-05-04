@@ -2,6 +2,7 @@ package com.example.project;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -51,9 +52,19 @@ public class MainActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
 
+        // read data from shared preferences and update text
+
+        /*
         //uppdaterar namnet varje resume
         prefs = getSharedPreferences("preferences", MODE_PRIVATE);
         String name = prefs.getString("name", "No name found.");
-        viewName.setText(name); //sätt det sparade namnet i en textview
+        if(viewName != null) {
+            viewName.setText(name); //sätt det sparade namnet i en textview
+        }
+        else {
+            Log.d("===", "viewName was empty");
+
+        }
+         */
     }
 }

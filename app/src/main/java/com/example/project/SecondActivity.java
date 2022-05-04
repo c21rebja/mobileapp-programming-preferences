@@ -7,6 +7,8 @@ import android.widget.TextView;
 
 public class SecondActivity extends AppCompatActivity {
 
+    //save data to shared preferences from an edittext
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
