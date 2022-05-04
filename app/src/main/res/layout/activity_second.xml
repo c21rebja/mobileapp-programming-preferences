@@ -26,6 +26,6 @@
         app:layout_constraintTop_toBottomOf="@id/edit_text"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:text="@string/name_here" />
+        android:text="@string/name_save" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
